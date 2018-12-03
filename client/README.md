@@ -1,7 +1,30 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Project Atys
 ## Available Scripts
 
+
+## Getting Started
+
+## Local Dev
+
+### Requirements
+
+- Node 10 or higher
+
+```bash
+# to run local dev
+npm start
+```
+
+## Docker
+
+Navigate to project directory and..
+
+```bash
+docker build -t my-nodejs-app .
+$ docker run -it --rm --name my-running-app my-nodejs-app
+```
 In the project directory, you can run:
 
 ### `npm start`

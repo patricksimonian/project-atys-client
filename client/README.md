@@ -22,8 +22,10 @@ npm start
 Navigate to project directory and..
 
 ```bash
-docker build -t my-nodejs-app .
-$ docker run -it --rm --name my-running-app my-nodejs-app
+./docker/docker-build.sh
+./docker/docker-run.sh
+# subsequent rebuilds
+./docker/docker-rebuild.sh
 ```
 In the project directory, you can run:
 

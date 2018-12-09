@@ -15,55 +15,6 @@ FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TOR
 OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
 USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-import React, { Component } from 'react';
-import './App.css';
+const Aux = ({ children }) => children;
 
-import IndexLayout from '../hoc/IndexLayout';
-import CardGridLayout from '../hoc/CardGridLayout';
-import Card from '../components/Card/Card';
-import { Grid } from '@material-ui/core';
-
-const dummyData = [
-  {
-    title: 'test',
-    description: '123',
-    author: 'blah',
-    thumbnail: 'https://www.google.ca',
-    placeholder: '..',
-    video: '..',
-  },
-  {
-    title: 'test',
-    description: '123',
-    author: 'blah',
-    thumbnail: 'https://www.google.ca',
-    placeholder: '..',
-    video: '..',
-  },
-  {
-    title: 'test',
-    description: '123',
-    author: 'blah',
-    thumbnail: 'https://www.google.ca',
-    placeholder: '..',
-    video: '..',
-  },
-];
-
-class App extends Component {
-  render() {
-    const cards = dummyData.map((card, ind) => (
-      <Grid item sm>
-        <Card key={ind} {...card} />
-      </Grid>
-    ));
-
-    return (<IndexLayout>
-      <CardGridLayout>
-        {cards}
-      </CardGridLayout>
-    </IndexLayout>);
-  }
-}
-
-export default App;
+export default Aux;

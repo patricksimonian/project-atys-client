@@ -23,12 +23,15 @@ const styles = theme => ({
   root: {
     display: 'flex',
   },
+  main: {
+    flexGrow: 1,
+  },
 });
 
 const IndexLayout = ({ children, classes }) => (
   <div className={classes.root}>
     <Drawer />
-    <div>{children}</div>
+    <div className={classes.main}>{children}</div>
   </div>
 );
 

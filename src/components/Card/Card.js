@@ -20,7 +20,7 @@ const styles = {
 };
 
 function ImgMediaCard(props) {
-  const { classes } = props;
+  const { classes, title, description } = props;
   return (
     <Card className={classes.card}>
       <CardActionArea>
@@ -34,11 +34,10 @@ function ImgMediaCard(props) {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Lizard
+            {title}
           </Typography>
           <Typography component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+            {description}
           </Typography>
         </CardContent>
       </CardActionArea>

@@ -15,55 +15,54 @@ FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TOR
 OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
 USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
-import React, { Component } from 'react';
-import './App.css';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import FormLabel from '@material-ui/core/FormLabel';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import Radio from '@material-ui/core/Radio';
+import Paper from '@material-ui/core/Paper';
 
-import IndexLayout from '../hoc/IndexLayout';
-import CardGridLayout from '../hoc/CardGridLayout';
-import Card from '../components/Card/Card';
-import { Grid } from '@material-ui/core';
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    height: 140,
+    width: 100,
+  },
+  control: {
+    padding: theme.spacing.unit * 2,
+  },
+});
 
-const dummyData = [
-  {
-    title: 'test',
-    description: '123',
-    author: 'blah',
-    thumbnail: 'https://www.google.ca',
-    placeholder: '..',
-    video: '..',
-  },
-  {
-    title: 'test',
-    description: '123',
-    author: 'blah',
-    thumbnail: 'https://www.google.ca',
-    placeholder: '..',
-    video: '..',
-  },
-  {
-    title: 'test',
-    description: '123',
-    author: 'blah',
-    thumbnail: 'https://www.google.ca',
-    placeholder: '..',
-    video: '..',
-  },
-];
+class GuttersGrid extends React.Component {
+  state = {
+    spacing: '16',
+  };
 
-class App extends Component {
+  handleChange = key => (event, value) => {
+    this.setState({
+      [key]: value,
+    });
+  };
+
   render() {
-    const cards = dummyData.map((card, ind) => (
-      <Grid item sm>
-        <Card key={ind} {...card} />
-      </Grid>
-    ));
+    const { classes, children } = this.props;
+    const { spacing } = this.state;
 
-    return (<IndexLayout>
-      <CardGridLayout>
-        {cards}
-      </CardGridLayout>
-    </IndexLayout>);
+    return (
+      <Grid container spacing={32} justify="center">
+        { children }
+      </Grid>
+    );
   }
 }
 
-export default App;
+GuttersGrid.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(GuttersGrid);

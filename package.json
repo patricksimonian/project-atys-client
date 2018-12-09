@@ -16,7 +16,7 @@
     "typeface-roboto": "0.0.54"
   },
   "scripts": {
-    "start": "SKIP_PREFLIGHT_CHECK=true react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:lint": "eslint src/",

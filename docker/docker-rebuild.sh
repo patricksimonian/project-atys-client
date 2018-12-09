@@ -1,5 +1,4 @@
 #!/bin/bash
-cd ../
 imageName=project-atys-client:latest
 containerName=atys-fe
 

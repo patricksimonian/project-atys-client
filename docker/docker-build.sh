@@ -1,2 +1,2 @@
 #!/bin/bash
-cd ../ && docker build -t project-atys-client .
+docker build -t project-atys-client .

@@ -1,39 +1,27 @@
-import React, { Component } from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { MuiThemeProvider } from '@material-ui/core/styles';
-import theme from '../theme';
-import Grid from '@material-ui/core/Grid';
-import AppBar from '../components/AppBar/AppBar';
-import Drawer from '../components/Drawer/Drawer';
-import Card from '../components/Card/Card';
+/*
+Copyright 2018 Patrick Simonian
+Permission is hereby granted, free of charge, to any person obtaining a copy of this
+software and associated documentation files (the "Software"), to deal in the Software
+without restriction, including without limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons
+to whom the Software is furnished to do so, subject to the following conditions:
 
+The above copyright notice and this permission notice shall be included in all copies
+or substantial portions of the Software.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+import React, { Component } from 'react';
 import './App.css';
 
+import IndexLayout from '../hoc/IndexLayout';
 class App extends Component {
   render() {
-    return (
-      <React.Fragment>
-        <CssBaseline />
-        {/* The rest of your application */}
-        <MuiThemeProvider theme={theme}>
-          <AppBar />
-          <Drawer />
-          <main>
-            <Grid container spacing={40}>
-              <Grid item>
-                <Card />
-              </Grid>
-              <Grid item>
-                <Card />
-              </Grid>
-              <Grid item>
-                <Card />
-              </Grid>
-            </Grid>
-          </main>
-        </MuiThemeProvider>
-      </React.Fragment>
-    );
+    return <IndexLayout>Hellodfsfs world!</IndexLayout>;
   }
 }
 
